@@ -18,7 +18,7 @@
         </p>
 
         <div class="field">
-            <label class="label">Title</label>
+            <label class="label-title">Title</label>
             <div class="control">
             <input class="input" type="text" placeholder="Give your workout a name!">
             </div>
@@ -109,5 +109,20 @@ export default {
 </script>
 
 <style>
-
+.feed{
+    margin-left: 75px;
+    margin-right: 75px;
+    padding-top: 20px;
+}
+.field{
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 10px;
+}
+.progress-box{
+    margin-bottom: 20px;
+}
+.control{
+    margin-bottom: 10px;
+}
 </style>

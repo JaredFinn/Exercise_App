@@ -134,26 +134,12 @@
             </div>
           </div>
         </div>
-        <div class="hero-foot">
-            <nav class="tabs is-boxed is-fullwidth">
-              <div class="container">
-                <ul>
-                  <li class="is-active">
-                    <a class="has-text-grey">Feed</a>
-                  </li>
-                  <li>
-                    <a href="activity.html">Daily Activity</a>
-                  </li>
-                  <li>
-                    <a href="record.html">Record</a>
-                  </li>
-                </ul>
-              </div>
-            </nav>
-        </div>
 
+        <NavFooter/>
+        
         <router-view/>
     </section>
+    <TabContent/>
   </div>
 </template>
 
@@ -165,11 +151,14 @@
 
 </style>
 <script>
+import NavFooter from "../components/NavFooter"
+import TabContent from "../components/TabContent"
 
 export default {
   name: 'Home',
   components: {
-
+    NavFooter,
+    TabContent
   }
 }
 </script>
