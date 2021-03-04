@@ -1,6 +1,6 @@
 <template>
   <div  id="user-content">
-      <ol>
+      <ol id="list">
         <li v-for="user in users" :key="user">
           <div class="box">
               <article class="media has-background-light">
@@ -67,5 +67,8 @@ export default {
     border-radius: 4px;
     padding: 10px;
     box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);;
+}
+#list{
+    list-style: none;
 }
 </style>

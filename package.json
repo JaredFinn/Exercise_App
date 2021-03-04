@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "dev": "nodemon --watch server/index.js",
+    "dev": "nodemon --watch server server/index.js",
     "run": "node server/index.js"
   },
   "dependencies": {
