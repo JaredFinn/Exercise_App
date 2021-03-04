@@ -1,10 +1,9 @@
 <template>
   <nav class="navbar is-light" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
-                <a class="navbar-item has-text-weight-bold is-size-3" href="https://bulma.io">
-                <i class=""></i>
+                <router-link to="/" class="navbar-item has-text-weight-bold is-size-3">
                     FinnFit
-                </a>
+                </router-link>
             
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                 <span aria-hidden="true"></span>
@@ -16,8 +15,8 @@
             <div id="navbarBasicExample" class="navbar-menu">
                 <div class="navbar-start">
 
-                <router-link to="/" class="navbar-item">Home</router-link>
                 <router-link to="/Documentation" class="navbar-item">Documentation</router-link>
+                
             
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">
@@ -45,12 +44,12 @@
                 <div class="navbar-end">
                     <div class="navbar-item">
                         <div class="buttons">
-                        <a class="button is-info">
-                            <strong>Sign up</strong>
-                        </a>
-                        <a class="button is-light">
-                            Log in
-                        </a>
+                            <router-link to="/signup" class="button is-info">
+                                Sign Up
+                            </router-link>
+                            <router-link to="/login" class="button is-light">
+                                Login
+                            </router-link>
                         </div>
                     </div>
                 </div>
