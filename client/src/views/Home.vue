@@ -29,9 +29,12 @@
 
         <NavFooter/>
         
+        
+
         <router-view/>
     </section>
-    <TabContent/>
+    <!--dynamic component-->
+    <component v-bind:is="currentTab"></component>
   </div>
 </template>
 
@@ -45,14 +48,30 @@
 <script>
 import ContentCard from '../components/ContentCard.vue'
 import NavFooter from "../components/NavFooter"
-import TabContent from "../components/TabContent"
+import Feed from "../components/Feed"
+import DailyActivity from "../components/Activity"
+import Record from "../components/Record"
+
 
 export default {
+  data: () => ({
+      currentTab: "Feed",
+
+  }),
+  methods: {
+    //want to recieve value of selectedTab from NavFooter.vue. this should be method
+    switchTab (value) {
+      this.currentTab = value
+    }
+  },
+
   name: 'Home',
   components: {
     NavFooter,
-    TabContent,
-    ContentCard
+    ContentCard,
+    Feed,
+    DailyActivity,
+    Record,
   }
 }
 </script>
