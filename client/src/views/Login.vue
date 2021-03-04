@@ -1,7 +1,9 @@
 <template>
-  <section class="hero is-small is-link">
+  <section id="login-hero" class="hero is-small is-info">
         <div class="hero-body">
-            <h1 id="Login-name">Login</h1>
+            <p class="title">
+                Login
+            </p>
             <form class="box">
                 <div class="field">
                 <label class="label">Email</label>
@@ -17,9 +19,11 @@
                 </div>
                 </div>
             
-                <button class="button is-primary">Sign in</button>
-                <h3 id="no-account">Dont have an account? Sign Up here.</h3>
-                <router-link to="/signup" class="button is-primary">
+                <button class="button is-info">Sign in</button>
+                <p class="is-size-5">
+                    Dont have an account? Sign Up here.
+                </p>
+                <router-link to="/signup" class="button is-info">
                     Sign Up
                 </router-link>
             </form>
@@ -34,5 +38,10 @@ export default {
 </script>
 
 <style>
-
+.button {
+    margin: 10px;
+}
+#login-hero {
+    margin: 20px;
+}
 </style>

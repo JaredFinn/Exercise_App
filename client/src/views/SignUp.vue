@@ -1,7 +1,9 @@
 <template>
-    <section class="hero is-small is-link">
+    <section id="signup-hero" class="hero is-small is-info">
         <div class="hero-body">
-            <h1 id="Login-name">Sign Up</h1>
+            <p class="title">
+                Sign Up
+            </p>
             <form class="box">
                 <div class="field">
                 <label class="label">Email</label>
@@ -41,7 +43,7 @@
                     </div>
                 </div>
             
-                <button class="button is-primary">Sign Up</button>
+                <button class="button is-info">Sign Up</button>
             </form>
         </div>
     </section>
@@ -54,5 +56,7 @@ export default {
 </script>
 
 <style>
-
+#signup-hero {
+    margin: 20px;
+}
 </style>
