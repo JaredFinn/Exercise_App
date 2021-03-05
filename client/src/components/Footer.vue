@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="foot">
       <footer class="footer">
         <div class="content-footer has-text-centered">
           <p>
@@ -19,5 +19,13 @@ export default {
 </script>
 
 <style>
+.foot {
+  display: flex;
+  min-height: 25vh;
+  flex-direction: column;
+}
 
+.footer {
+  margin-top: auto;
+}
 </style>

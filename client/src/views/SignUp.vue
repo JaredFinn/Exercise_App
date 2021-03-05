@@ -6,24 +6,35 @@
             </p>
             <form class="box">
                 <div class="field">
-                <label class="label">Email</label>
-                <div class="control">
-                    <input class="input" type="email" placeholder="e.g. alex@example.com">
+                    <label class="label">Email</label>
+                    <p class="control has-icons-left has-icons-right">
+                        <input class="input" type="email" placeholder="Eg. google@gmail.com">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                        <span class="icon is-small is-right">
+                            <i class="fas fa-check"></i>
+                        </span>
+                    </p>
                 </div>
-                </div>
-            
                 <div class="field">
-                <label class="label">Password</label>
-                <div class="control">
-                    <input class="input" type="password" placeholder="********">
-                </div>
+                    <label class="label">Password</label>
+                    <p class="control has-icons-left">
+                        <input class="input" type="password" placeholder="********">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </p>
                 </div>
 
                 <div class="field">
                     <label class="label">Confirm Password</label>
-                    <div class="control">
+                    <p class="control has-icons-left">
                         <input class="input" type="password" placeholder="********">
-                    </div>
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </p>
                 </div>
 
                 <div class="field">

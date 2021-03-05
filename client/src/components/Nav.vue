@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+  <nav id="navBarID" class="navbar is-light" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
                 <router-link to="/" class="navbar-item has-text-weight-bold is-size-3">
                     FinnFit
@@ -64,5 +64,7 @@ export default {
 </script>
 
 <style>
-
+#navBarID{
+    margin-bottom: 20px;
+}
 </style>
