@@ -1,56 +1,96 @@
 <template>
-  <div  id="user-content">
-      <ol id="list">
-        <li v-for="user in users" :key="user">
-          <div class="box">
-              <article class="media has-background-light">
-                <div class="media-left">
-                  <figure class="image is-64x64">
-                    <i class="fas fa-user-astronaut fa-3x"></i>
-                  </figure>
-                </div>
-                    <div class="media-content">
-                      <div  class="content">
-                        <p>
-                          <strong>{{ user.name }}</strong> <small>{{ user.account }}</small> <small>{{ user.lastTime }}</small>
-                          <br>
-                          {{ user.status }}
-                        </p>
-                        <figure class="image is-128x128">
-                          <img src="https://bulma.io/images/placeholders/128x128.png">
-                        </figure>
-                      </div>
-                      <nav class="level is-mobile">
-                        <div class="level-left">
-                          <a class="level-item" aria-label="reply">
-                            <span class="icon is-small">
-                              <i class="fas fa-heart" aria-hidden="true"></i>
-                            </span>
-                          </a>
-                          <a class="level-item" aria-label="retweet">
-                            <span class="icon is-small">
-                              <i class="fas fa-retweet" aria-hidden="true"></i>
-                            </span>
-                          </a>
-                          <a class="level-item" aria-label="like">
-                            <span class="icon is-small">
-                              <i class="fas fa-comment" aria-hidden="true"></i>
-                            </span>
-                          </a>
-                        </div>
-                      </nav>
-                    </div>  
-              </article>
+  <div>
+    <article v-for="post in posts" :key="post"  class="media">
+      <figure class="media-left">
+          <p class="image is-64x64">
+            <img  id="profile-image" src="https://bulma.io/images/placeholders/128x128.png">
+          </p>
+      </figure>
+      <div class="media-content">
+        <div class="content">
+          <p>
+            <strong>{{ post.name + " " }}</strong>
+            <small>{{ post.account }}</small>
+            <br>
+              {{ post.status }}
+            <br>
+          </p>
+            <div class="box" width="50">
+              <div class="card-image">
+                <figure class="image is-16by9">
+                  <img class="has-ratio" frameborder="0" allowfullscreen src="https://wvtourism.com/wp-content/uploads/2018/04/Endles-Wall-4-13-18.jpg" alt="Placeholder image">              
+                </figure>
+              </div>
+            </div>
+          <small><a>Like</a> · <a>Reply</a> · {{ post.lastTime }}</small>
+        </div>
+
+        <article class="media">
+          <figure class="media-left">
+            <p class="image is-48x48">
+              <img src="https://bulma.io/images/placeholders/96x96.png">
+            </p>
+          </figure>
+          <div class="media-content">
+            <div class="content">
+              <p>
+                <strong>Sean Brown</strong>
+                <br>
+                Donec sollicitudin urna eget eros malesuada sagittis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam blandit nisl a nulla sagittis, a lobortis leo feugiat.
+                <br>
+                <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
+              </p>
+            </div>
           </div>
-        </li>
-      </ol>
-    </div>
+        </article>
+
+        <article class="media">
+          <figure class="media-left">
+            <p class="image is-48x48">
+              <img src="https://bulma.io/images/placeholders/96x96.png">
+            </p>
+          </figure>
+          <div class="media-content">
+            <div class="content">
+              <p>
+                <strong>Kayli Eunice </strong>
+                <br>
+                Sed convallis scelerisque mauris, non pulvinar nunc mattis vel. Maecenas varius felis sit amet magna vestibulum euismod malesuada cursus libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus lacinia non nisl id feugiat.
+                <br>
+                <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </article>
+
+    <article class="media">
+      <figure class="media-left">
+        <p class="image is-64x64">
+          <img src="https://bulma.io/images/placeholders/128x128.png">
+        </p>
+      </figure>
+      <div class="media-content">
+        <div class="field">
+          <p class="control">
+            <textarea class="textarea" placeholder="Add a comment..."></textarea>
+          </p>
+        </div>
+        <div class="field">
+          <p class="control">
+            <button class="button">Post comment</button>
+          </p>
+        </div>
+      </div>
+    </article>
+  </div>
 </template>
 
 <script>
 export default {
     data: () => ({
-        users: [
+        posts: [
             { name: 'Jared', account: '@jfinn1800', status: 'Just ran 20 miles!! Whoe else??', lastTime: '30min'},
             { name: 'Isabella', account: '@bella1234', status: 'Good hike up lemon squeeze this morning', lastTime: '20min'},
             { name: 'Leo', account: '@Leo5678', status: '@jfinn1800 one upped you with 25!', lastTime: '40min'},
@@ -64,11 +104,15 @@ export default {
 
 <style>
 .media{
+    margin-top: 20px;
     border-radius: 4px;
     padding: 10px;
     box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);;
 }
 #list{
     list-style: none;
+}
+#profile-image {
+  border-radius: 6px;
 }
 </style>
