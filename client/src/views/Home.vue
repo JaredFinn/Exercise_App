@@ -27,14 +27,25 @@
           </div>
         </div>
 
-        <NavFooter/>
+        <div class="hero-foot">
+        <nav class="tabs is-boxed is-fullwidth">
+          <div class="container">
+            <ul>
+                                                <!--@clicked="onClickButton", unsure if this statement is valid -->
+              <li @click="selectTab(tab.title)"  v-for="tab in tabs" :key="tab.title" :class="{ 'is-active': selectedTab === tab.title }">
+                <a class="has-text-light" :class="{ 'has-text-grey-dark': selectedTab === tab.title }">{{ tab.title }}</a>
+              </li>
+            </ul>
+          </div>
+        </nav>  
+    </div>
         
         
 
         <router-view/>
     </section>
     <!--dynamic component-->
-    <component v-bind:is="currentTab"></component>
+    <component v-bind:is="selectedTab"></component>
   </div>
 </template>
 
@@ -47,31 +58,34 @@
 </style>
 <script>
 import ContentCard from '../components/ContentCard.vue'
-import NavFooter from "../components/NavFooter"
 import Feed from "../components/Feed"
 import DailyActivity from "../components/Activity"
 import Record from "../components/Record"
 
 
 export default {
-  data: () => ({
-      currentTab: "Feed",
-
+  data: () => ({ 
+      tabs: [
+            {title: "Feed"},
+            {title: "DailyActivity"},
+            {title: "Record"}
+        ],
+        selectedTab: "Feed",
   }),
+
   methods: {
-    //want to recieve value of selectedTab from NavFooter.vue. this should be method
-    switchTab (value) {
-      this.currentTab = value
-    }
+    selectTab(tab){
+        this.selectedTab = tab;
+      },
   },
 
   name: 'Home',
   components: {
-    NavFooter,
     ContentCard,
     Feed,
     DailyActivity,
     Record,
-  }
+  }    
+
 }
 </script>

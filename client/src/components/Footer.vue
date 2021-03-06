@@ -21,7 +21,7 @@ export default {
 <style>
 .foot {
   display: flex;
-  min-height: 25vh;
+  min-height: 35vh;
   flex-direction: column;
 }
 
