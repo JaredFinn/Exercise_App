@@ -28,7 +28,7 @@
         <article class="media">
           <figure class="media-left">
             <p class="image is-48x48">
-              <img src="https://bulma.io/images/placeholders/96x96.png">
+              <img id="profile-image" src="https://bulma.io/images/placeholders/96x96.png">
             </p>
           </figure>
           <div class="media-content">
@@ -47,7 +47,7 @@
         <article class="media">
           <figure class="media-left">
             <p class="image is-48x48">
-              <img src="https://bulma.io/images/placeholders/96x96.png">
+              <img id="profile-image" src="https://bulma.io/images/placeholders/96x96.png">
             </p>
           </figure>
           <div class="media-content">
@@ -60,18 +60,9 @@
                 <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
               </p>
             </div>
-          </div>
+          </div>      
         </article>
-      </div>
-    </article>
-
-    <article class="media">
-      <figure class="media-left">
-        <p class="image is-64x64">
-          <img src="https://bulma.io/images/placeholders/128x128.png">
-        </p>
-      </figure>
-      <div class="media-content">
+        <div class="media-content">
         <div class="field">
           <p class="control">
             <textarea class="textarea" placeholder="Add a comment..."></textarea>
@@ -83,6 +74,8 @@
           </p>
         </div>
       </div>
+      </div>
+      
     </article>
   </div>
 </template>
@@ -90,8 +83,8 @@
 <script>
 export default {
     data: () => ({
-        newpost: {
-            user: { }
+        newPost: {
+            
         },
         posts: [
             {
@@ -108,12 +101,14 @@ export default {
     methods: {
         addPost(){
             this.posts.unshift(this.newPost);
-            this.newPost = { user: {} }
+            this.newPost = { user: { } }
         }
     }
 }
 </script>
 
 <style>
-
+a{
+  color:royalblue;
+}
 </style>
