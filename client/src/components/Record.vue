@@ -22,7 +22,7 @@
                 <div class="field">
                     <label class="label">Title</label>
                     <div class="control">
-                    <input class="input" type="text" placeholder="Give your workout a name!" >
+                    <input class="input" type="text" placeholder="Give your workout a name!" v-model="newPost.title" title="newPost.title" >
                     </div>
                 </div>
                 
@@ -102,14 +102,42 @@
                 </article>
             </article>
         </form>
+
+        <NewPost/>
     </div>
     
 </template>
 
 <script>
-export default {
+import NewPost from "./newPost"
 
-}
+export default {
+    components: {
+        NewPost
+    },
+    data: () => ({
+        newPost: {
+            
+        },
+        posts: [
+            {
+                title:"",
+                distance:"",
+                time:"",
+                fellowFitter:"",
+                difficulty:"",
+                status:"",
+            }
+        ]
+    }),
+
+        methods: {
+            addPost(){
+                this.posts.unshift(this.newPost);
+                this.newPost = {}
+            }
+        }
+    }
 </script>
 
 <style>

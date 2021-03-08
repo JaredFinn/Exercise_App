@@ -9,7 +9,7 @@
       <div class="media-content">
         <div class="content">
           <p>
-            <strong>{{ post.name + " " }}</strong>
+            <strong :title="post.title"></strong>
             <small>{{ post.account }}</small>
             <br>
               {{ post.status }}
@@ -95,15 +95,13 @@ export default {
                 difficulty:"",
                 status:"",
             }
-        ]   
+        ],
+        props: {
+            title: String,
+        }
     }),
 
-    methods: {
-        addPost(){
-            this.posts.unshift(this.newPost);
-            this.newPost = { user: { } }
-        }
-    }
+    
 }
 </script>
 
