@@ -1,6 +1,6 @@
 <template>
     <div>
-    <article v-for="post in posts" :key="post"  class="media">
+    <article class="media">
       <figure class="media-left">
           <p class="image is-64x64">
             <img  id="profile-image" src="https://bulma.io/images/placeholders/128x128.png">
@@ -9,20 +9,22 @@
       <div class="media-content">
         <div class="content">
           <p>
-            <strong :title="post.title"></strong>
-            <small>{{ post.account }}</small>
-            <br>
-              {{ post.status }}
+            <strong>User</strong>
+            <small> @UserHandle</small>
             <br>
           </p>
+          <p class="title is-3 has-text-weight-bold">{{ post.title }}</p>
+          <p class="subtitle is-5">Distance: {{ post.distance }} / Time: {{ post.time }} / Difficulty: {{ post.difficulty }} / Fellow Fitters: {{ post.fellowFitter }}</p>
+          <p class="content is-medium">{{post.status}}</p>
+          
             <div class="box" width="50">
               <div class="card-image">
-                <figure class="image is-16by9">
-                  <img class="has-ratio" frameborder="0" allowfullscreen src="https://wvtourism.com/wp-content/uploads/2018/04/Endles-Wall-4-13-18.jpg" alt="Placeholder image">              
+                <figure class="image">
+                  <img class="is-small" frameborder="0" allowfullscreen :src="post.img" alt="Placeholder image">              
                 </figure>
               </div>
             </div>
-          <small><a>Like</a> · <a>Reply</a> · {{ post.lastTime }}</small>
+          <small><a>Like</a> · <a>Reply</a> · {{ post.time }}</small>
         </div>
 
         <article class="media">
@@ -82,26 +84,9 @@
 
 <script>
 export default {
-    data: () => ({
-        newPost: {
-            
-        },
-        posts: [
-            {
-                name:"",
-                distance:"",
-                time:"",
-                fellowFitter:"",
-                difficulty:"",
-                status:"",
-            }
-        ],
-        props: {
-            title: String,
-        }
-    }),
-
-    
+    props: {
+      post: Object
+    } 
 }
 </script>
 

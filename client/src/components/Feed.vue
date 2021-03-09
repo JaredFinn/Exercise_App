@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import NewPost from './newPost.vue'
+import NewPost from './Post.vue'
 export default {
     data: () => ({
 
