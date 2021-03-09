@@ -40,17 +40,10 @@
                     </div>
                 </div>
                 </div>
-            
+
                 <div class="navbar-end">
                     <div class="navbar-item">
-                        <div class="buttons">
-                            <router-link to="/signup" class="button is-info">
-                                Sign Up
-                            </router-link>
-                            <router-link to="/login" class="button is-light">
-                                Login
-                            </router-link>
-                        </div>
+                        <LoginBadge />
                     </div>
                 </div>
             </div>
@@ -58,7 +51,9 @@
 </template>
 
 <script>
+import LoginBadge from './LoginBadge.vue'
 export default {
+  components: { LoginBadge },
 
 }
 </script>

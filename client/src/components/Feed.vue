@@ -1,15 +1,20 @@
 <template>
-  <new-post/>
+  <div>
+      <div class="content-item" v-for="(post, i) in posts" :key="i">
+          <Post :post="post" @delete="deletePost(i)"/>
+      </div> 
+
+  </div>  
 </template>
 
 <script>
-import NewPost from './Post.vue'
+import Post from "./Post"
+
 export default {
     data: () => ({
-
     }),
     components: {
-      NewPost
+      Post
     }
 }
 
