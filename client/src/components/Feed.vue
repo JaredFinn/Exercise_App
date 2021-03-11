@@ -9,14 +9,20 @@
 
 <script>
 import Post from "./Post"
+import Vue from "vue"
+import { GetMyPosts } from "../models/Posts";
 
-export default {
+export default Vue.extend({
     data: () => ({
+      posts: []
     }),
     components: {
       Post
+    },
+    mounted() {
+      this.posts = GetMyPosts();
     }
-}
+})
 
 
 </script>

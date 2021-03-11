@@ -10,18 +10,9 @@
             Record and share your exercises!
             </p>
 
-            <div class="columns is-inline-flex">
-                <div class="column">
-                    <content-card/>
-                </div>
-                <div class="column">
-                    <content-card/>
-                </div>
-                <div class="column">
-                    <content-card/>
-                </div>
-                <div class="column">
-                    <content-card/>
+            <div class="columns" >
+                <div class="column is-one-third" v-for="(post, i) in posts" :key="i">
+                    <content-card :post="post"/>
                 </div>
             </div>
           </div>
@@ -61,16 +52,18 @@ import ContentCard from '../components/ContentCard.vue'
 import Feed from "../components/Feed"
 import DailyActivity from "../components/Activity"
 import Record from "../components/Record"
+import Vue from "vue"
+import { GetMyPosts } from "../models/Posts";
 
-
-export default {
+export default Vue.extend({
   data: () => ({ 
       tabs: [
             {title: "Feed"},
             {title: "DailyActivity"},
             {title: "Record"}
         ],
-        selectedTab: "Feed",
+      selectedTab: "Feed",
+      posts: []
   }),
 
   methods: {
@@ -78,14 +71,16 @@ export default {
         this.selectedTab = tab;
       },
   },
-
   name: 'Home',
   components: {
     ContentCard,
     Feed,
     DailyActivity,
     Record,
-  }    
+  },
+  mounted() {
+        this.posts = GetMyPosts();
+    }   
 
-}
+})
 </script>

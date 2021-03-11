@@ -107,6 +107,10 @@
                     </div>
                 </div>
                 </article>
+                <div class="content-item">
+                    <p class="title">Preview Your New Post:</p>
+                    <Post :post="newPost"/>
+                </div> 
             </article>
         </form>
 
@@ -114,9 +118,7 @@
             <Post :post="post" @delete="deletePost(i)"/>
         </div>    
 
-        <div class="content-item">
-            <Post :post="newPost"/>
-        </div>       
+              
 
     </div>
     
@@ -124,44 +126,29 @@
 
 <script>
 import Post from "./Post"
+import Vue from "vue"
+import { GetMyPosts } from "../models/Posts";
 
-export default {
+export default Vue.extend({
+    data: () => ({
+        newPost: {
+
+        },
+        posts: []    
+    }),
+    mounted() {
+        this.posts = GetMyPosts();
+    },
     components: {
         Post
     },
-    data: () => ({
-        newPost: {
-            
-        },
-        posts: [
-            {
-                title:"Morning Run",
-                distance:"3 Miles",
-                time:"20 min",
-                fellowFitter:"@Leo",
-                difficulty:"Too Easy",
-                status:"Felt good this morning!!",
-                img:"https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/summer-running-1597413181.jpg?crop=0.812xw:0.795xh;0.0294xw,0&resize=640:*"
-            },
-            {
-                title:"Night Run",
-                distance:"4 Miles",
-                time:"30 min",
-                fellowFitter:"",
-                difficulty:"Too Hard",
-                status:"It was Dark!",
-                img:"https://www.marinij.com/wp-content/uploads/2020/04/MIJ-L-HIKE-0420-02.jpg"
-            }
-        ]
-    }),
-
     methods: {
         addPost(){
             this.posts.unshift(this.newPost);
             this.newPost = {}
         }
     }
-}
+})
 </script>
 
 <style>

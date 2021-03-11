@@ -2,10 +2,10 @@
     <div>
 
         <div class="buttons" v-if="!Session.user">
-            <a class="button is-info">
-                <strong>Sign up</strong>
-            </a>
-            <router-link to="/login" class="navbar-item">
+            <router-link to="/signup" class="button is-info">
+                Sign Up
+            </router-link>
+            <router-link to="/login" class="button is-light">
                 Log in
             </router-link>
         </div>

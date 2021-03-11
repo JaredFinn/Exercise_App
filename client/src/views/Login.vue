@@ -9,8 +9,8 @@
                     <label class="label">Username</label>
                     <p class="control has-icons-left has-icons-right">
                         <input class="input" type="username" placeholder="@Matt123" v-model="user">
-                        <span class="icon is-small is-right">
-                            <i class="fas fa-check"></i>
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-user"></i>
                         </span>
                     </p>
                 </div>
