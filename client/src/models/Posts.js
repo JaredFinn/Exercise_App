@@ -6,7 +6,7 @@ const posts = [
     {
         title:"Morning Run",
         distance:"3 Miles",
-        time:"20 min",
+        time: Date(),
         fellowFitter:"@Leo",
         difficulty:"Too Easy",
         status:"Felt good this morning!!",
@@ -15,7 +15,7 @@ const posts = [
     {
         title:"Night Run",
         distance:"4 Miles",
-        time:"30 min",
+        time: Date(),
         fellowFitter:"",
         difficulty:"Too Hard",
         status:"It was Dark!",
@@ -24,7 +24,7 @@ const posts = [
     {
         title:"Night Run",
         distance:"4 Miles",
-        time:"30 min",
+        time: Date(),
         fellowFitter:"",
         difficulty:"Too Hard",
         status:"It was Dark!",

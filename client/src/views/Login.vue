@@ -4,11 +4,24 @@
             <p class="title">
                 Login
             </p>
-            <form class="box">
+            <form class="box" >
+
+                <article class="message is-danger" v-if="loginFail">
+                    <div class="message-header">
+                        <p>Try Again</p>
+                        <button class="delete" aria-label="delete"></button>
+                    </div>
+                    <div class="message-body">
+                        Login Failed. Your Username or Password is incorrect. Try Again.
+                    </div>
+                </article>
+                <div v-else>    
+                </div>
+
                 <div class="field">
                     <label class="label">Username</label>
                     <p class="control has-icons-left has-icons-right">
-                        <input class="input" type="username" placeholder="@Matt123" v-model="user">
+                        <input class="input" type="username" placeholder="@Matt123" v-model="username">
                         <span class="icon is-small is-left">
                             <i class="fas fa-user"></i>
                         </span>
@@ -17,14 +30,14 @@
                 <div class="field">
                     <label class="label">Password</label>
                     <p class="control has-icons-left">
-                        <input class="input" type="password" placeholder="********">
+                        <input class="input" type="password" placeholder="********" v-model="password">
                         <span class="icon is-small is-left">
                             <i class="fas fa-lock"></i>
                         </span>
                     </p>
                 </div>
             
-                <button class="button is-info" @click.prevent="checkLogin">Sign in</button>
+                <button class="button is-info" @click.prevent="checkLogin(username, password)" >Sign in</button>
                 <p class="is-size-5">
                     Dont have an account? Sign Up here.
                 </p>
@@ -37,21 +50,29 @@
 </template>
 
 <script>
-import { Login } from "../models/Session";
+import Session, { Login } from "../models/Session";
 
 export default {
     data: () => ({
+        loginFail: false,
         users: [
-            { username: "@Jfinn1800" },
-            { username: "Isabella31"},
-            { username: "LukeBizzi12"},
-        ]
+        { user: "Jared" , username: "@JaredFinn", password: "Jared100" },
+        { user: "Luke" , username: "@LukeGamboli", password: "Luke200" },
+        { user: "Leo" , username: "@LeoLit", password: "Leo300" },
+    ],
     }),
     methods: {
-        checkLogin() {
-            if(this.users.filter(this.users.username))
-                Login(this.users.username)
-        }
+        checkLogin(username, password) {
+            var i;
+            for(i = 0; i < this.users.length; i++){
+                if(username === this.users[i].username && password === this.users[i].password){
+                    Login(this.users[i].user);
+                    this.loginFail = false;
+                }
+            }
+            if(!Session.currentUser)
+                this.loginFail = true;
+        },
     }
 }
 </script>

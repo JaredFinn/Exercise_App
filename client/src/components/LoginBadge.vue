@@ -1,7 +1,7 @@
 <template>
     <div>
 
-        <div class="buttons" v-if="!Session.user">
+        <div class="buttons" v-if="!Session.currentUser">
             <router-link to="/signup" class="button is-info">
                 Sign Up
             </router-link>
@@ -10,7 +10,7 @@
             </router-link>
         </div>
         <div v-else>
-            Welcome {{ Session.user.user }}
+            Welcome {{ Session.currentUser }}
             (<a @click="logout">
                 logout
             </a>)

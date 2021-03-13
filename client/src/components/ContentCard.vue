@@ -13,8 +13,8 @@
                     </figure>
                 </div>
                 <div class="media-content">
-                    <p class="title is-4">{{ post.title }}</p>
-                    <p class="subtitle is-6">@johnsmith</p>
+                    <p class="title is-4 has-text-dark">{{ post.title }}</p>
+                    <p class="subtitle is-6 has-text-dark">@johnsmith</p>
                 </div>
             </div>
         
