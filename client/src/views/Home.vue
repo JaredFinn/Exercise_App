@@ -11,8 +11,9 @@
             </p>
 
             <div class="columns" >
-                <div class="column is-one-third" v-for="(post, i) in posts" :key="i">
-                    <content-card :post="post"/>
+                <div class="column is-one-third" v-for="(post, i) in posts" :key="i" >
+                    <!--displays only 3 most recent posts-->
+                    <content-card v-if="i < 3" :post="post"/>
                 </div>
             </div>
           </div>
@@ -22,7 +23,7 @@
         <nav class="tabs is-boxed is-fullwidth">
           <div class="container">
             <ul>
-                                                <!--@clicked="onClickButton", unsure if this statement is valid -->
+
               <li @click="selectTab(tab.title)"  v-for="tab in tabs" :key="tab.title" :class="{ 'is-active': selectedTab === tab.title }">
                 <a class="has-text-light" :class="{ 'has-text-grey-dark': selectedTab === tab.title }">{{ tab.title }}</a>
               </li>
