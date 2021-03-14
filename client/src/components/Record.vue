@@ -113,13 +113,6 @@
                 </div> 
             </article>
         </form>
-
-        <div class="content-item" v-for="(post, i) in posts" :key="i">
-            <Post :post="post" @delete="deletePost(i)"/>
-        </div>    
-
-              
-
     </div>
     
 </template>
