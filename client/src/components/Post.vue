@@ -24,7 +24,7 @@
                   </figure>
                 </div>
               </div>
-            <small> {{ post.time }}</small>
+            <small> {{ post.time }} ago</small>
           </div>
 
           <div class="media-content">

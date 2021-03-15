@@ -7,34 +7,45 @@ import Session from "./Session";
 const posts = [
     {
         sport: "Run-Walk",
-        title:"Morning Run",
+        title:"Morning walk to get some sunshine!",
+        distance:"1 mile",
+        time: "30 min",
+        fellowFitter:"",
+        difficulty:"Just Right",
+        status:"Nice morning to get up and walk!",
+        img:"https://cdn.cdnparenting.com/articles/2018/11/04122759/562075621-H.jpg"
+    },
+    {
+        sport: "Run/Walk",
+        title:"Afternoon Hike To Awosting Falls!",
         distance:"3 Miles",
-        time: Date(),
-        fellowFitter:"@Leo",
-        difficulty:"Too Easy",
-        status:"Felt good this morning!!",
-        img:"https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/summer-running-1597413181.jpg?crop=0.812xw:0.795xh;0.0294xw,0&resize=640:*"
+        time: "2 hours",
+        fellowFitter:"@Leo, @Luke",
+        difficulty:"Recovery",
+        status:"Beautiful afternoon hike in New Paltz. Took a loop to awosting falls!",
+        img:"https://i.ytimg.com/vi/xDn_vUuJVyo/maxresdefault.jpg"
     },
     {
-        sport: "Run-Walk",
-        title:"Night Run",
-        distance:"4 Miles",
-        time: Date(),
-        fellowFitter:"",
+        sport: "Swim",
+        title:"Morning Practice, Yikes..",
+        distance:"8300 yards",
+        time: "2 hours",
+        fellowFitter:"@HawksSwim",
         difficulty:"Too Hard",
-        status:"It was Dark!",
-        img:"https://www.marinij.com/wp-content/uploads/2020/04/MIJ-L-HIKE-0420-02.jpg"
+        status:"Was a rough morning practice but feeling good!",
+        img:"https://i1.wp.com/www.swimmersdaily.com/wp-content/uploads/2019/09/a-swim-practice-surprise-cody-mi.jpg?fit=1280%2C720&ssl=1"
     },
     {
-        sport: "Run-Walk",
-        title:"Night Run",
-        distance:"4 Miles",
-        time: Date(),
-        fellowFitter:"",
-        difficulty:"Too Hard",
-        status:"It was Dark!",
-        img:"https://www.marinij.com/wp-content/uploads/2020/04/MIJ-L-HIKE-0420-02.jpg"
+        sport: "Ski-Snowboard",
+        title:"Big Shred Day Today!",
+        distance:"12 runs",
+        time: "6 hours",
+        fellowFitter:"@Leo, @Akiva",
+        difficulty:"Just Right",
+        status:"Hit up hunter mountain today, no friends on a pow day!",
+        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Hunter_Mountain.jpg/240px-Hunter_Mountain.jpg"
     },
+    
 ];
 
 export function GetMyPosts(){
