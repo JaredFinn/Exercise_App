@@ -9,7 +9,6 @@
             <p class="subtitle has-text-centered">
             Record and share your exercises!
             </p>
-
             <div class="columns" >
                 <div class="column is-one-third" v-for="(post, i) in posts" :key="i" >
                     <!--displays only 3 most recent posts-->
@@ -18,26 +17,22 @@
             </div>
           </div>
         </div>
-
         <div class="hero-foot">
-        <nav class="tabs is-boxed is-fullwidth">
-          <div class="container">
-            <ul>
-
-              <li @click="selectTab(tab.title)"  v-for="tab in tabs" :key="tab.title" :class="{ 'is-active': selectedTab === tab.title }">
-                <a class="has-text-light" :class="{ 'has-text-grey-dark': selectedTab === tab.title }">{{ tab.title }}</a>
-              </li>
-            </ul>
-          </div>
-        </nav>  
-    </div>
-        
-        
-
-        <router-view/>
+          <nav class="tabs is-boxed is-fullwidth">
+            <div class="container">
+              <ul>
+                <li @click="selectTab(tab.title)"  v-for="tab in tabs" :key="tab.title" :class="{ 'is-active': selectedTab === tab.title }">
+                  <a class="has-text-light" :class="{ 'has-text-grey-dark': selectedTab === tab.title }">{{ tab.title }}</a>
+                </li>
+              </ul>
+            </div>
+          </nav>  
+        </div> 
     </section>
+
     <!--dynamic component-->
     <component v-bind:is="selectedTab"></component>
+    
   </div>
 </template>
 

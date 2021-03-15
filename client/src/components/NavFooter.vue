@@ -3,7 +3,6 @@
         <nav class="tabs is-boxed is-fullwidth">
           <div class="container">
             <ul>
-                                                <!--@clicked="onClickButton", unsure if this statement is valid -->
               <li @click="selectTab(tab.title)"  v-for="tab in tabs" :key="tab.title" :class="{ 'is-active': selectedTab === tab.title }">
                 <a class="has-text-light" :class="{ 'has-text-grey-dark': selectedTab === tab.title }">{{ tab.title }}</a>
               </li>
@@ -24,18 +23,12 @@ export default {
         ],
         selectedTab: "Feed",
     }),
-    
     methods: {
       selectTab(tab){
         this.selectedTab = tab;
       },
-      // This should be how I pass selectedTab on clicked event
-      onClickButton () {
-        this.$emit('clicked', this.selectedTab)
-      }
     }
-}
-                
+}        
 </script>
 
 <style>

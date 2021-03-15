@@ -9,12 +9,12 @@
             <div class="media">
                 <div class="media-left">
                     <figure class="image is-48x48">
-                    <img class="is-rounded" src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                        <i class="fas fa-user-circle fa-3x"></i>
                     </figure>
                 </div>
                 <div class="media-content">
                     <p class="title is-4 has-text-dark">{{ post.title }}</p>
-                    <p class="subtitle is-6 has-text-dark">@johnsmith</p>
+                    <p class="subtitle is-6 has-text-dark">{{ user }}</p>
                 </div>
             </div>
         
@@ -28,8 +28,15 @@
 </template>
 
 <script>
+import Session from "../models/Session";
 
 export default({
+    data() {
+        return {
+            Session,
+            user: Session.currentUser
+        }
+    },
     props: {
       post: Object
     } 

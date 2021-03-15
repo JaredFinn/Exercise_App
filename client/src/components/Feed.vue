@@ -12,9 +12,10 @@ import Post from "./Post"
 import Vue from "vue"
 import { GetMyPosts } from "../models/Posts";
 
+
 export default Vue.extend({
     data: () => ({
-      posts: []
+      posts: [],
     }),
     components: {
       Post

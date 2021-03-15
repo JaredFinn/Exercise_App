@@ -52,9 +52,9 @@
 
 <script>
 import LoginBadge from './LoginBadge.vue'
-export default {
-  components: { LoginBadge },
 
+export default {
+    components: { LoginBadge },
 }
 </script>
 
