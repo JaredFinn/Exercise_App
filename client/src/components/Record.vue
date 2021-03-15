@@ -3,8 +3,8 @@
         <form :newpost="newPost" @submit.prevent="addPost">
             <article class="box">
                 <div class="progress-box">
-                    <p class="progress-percent">You are <strong class="is-size-4">{{ (goal / 5)*100 }}%</strong> done with your weekly goal of 5 exercises!</p>
-                    <progress class="progress is-success" value="0" max="100">{{ (goal / 5)*100 }}%</progress>
+                    <p class="progress-percent">You are <strong class="is-size-4">{{ goalPercentage }}%</strong> done with your weekly goal of 5 exercises!</p>
+                    <progress class="progress is-success" :value="goalPercentage" max="100">{{ goalPercentage }}%</progress>
                 </div>
                     
                 <article class="panel is-info">
@@ -56,6 +56,11 @@ export default {
       updateGoal(){
           this.goal += 1;
       }
+    },
+    computed: {
+        goalPercentage(){
+          return (this.goal / 5) * 100;  
+        }
     }
 }
 </script>
