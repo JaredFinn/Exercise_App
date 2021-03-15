@@ -103,6 +103,7 @@
 import Post from "../Post"
 import Vue from "vue"
 import { GetMyPosts } from "../../models/Posts";
+import Session from "../../models/Session"
 
 export default Vue.extend({
     data: () => ({
@@ -121,6 +122,8 @@ export default Vue.extend({
         },
         addToGoal(){
             this.$emit('update-goal')
+            this.newPost.user = Session.currentUser;
+            this.newPost.userHandle = Session.currentUserHandle;
         }
     },
     mounted() {

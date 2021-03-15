@@ -3,23 +3,16 @@
 */
 const Session = {
     currentUser: null,
+    currentUserHandle: null,
     
     message: [] // To be used later
     
 }
 export default Session;
 
-export function CheckLogin(username, password) {
-    if(username === this.currentUsername && password === this.currentUserPass){
-        return true;
-    }
-    else
-        return false;
-}
-
-export function Login(username){
+export function Login(username, handle){
     Session.currentUser = username;
-    
+    Session.currentUserHandle = handle;
 }
 
 export function Logout() {

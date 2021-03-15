@@ -56,9 +56,9 @@ export default {
     data: () => ({
         loginFail: false,
         users: [
-        { user: "Jared" , username: "@JaredFinn", password: "Jared100" },
-        { user: "Luke" , username: "@LukeGamboli", password: "Luke200" },
-        { user: "Leo" , username: "@LeoLit", password: "Leo300" },
+        { user: "Jared F" , handle: "@JaredFinn", password: "Jared100" },
+        { user: "Luke G" , handle: "@LukeGamboli", password: "Luke200" },
+        { user: "Leo L" , handle: "@LeoLit", password: "Leo300" },
     ],
     }),
     methods: {
@@ -66,7 +66,7 @@ export default {
             var i;
             for(i = 0; i < this.users.length; i++){
                 if(username === this.users[i].username && password === this.users[i].password){
-                    Login(this.users[i].user);
+                    Login(this.users[i].user, this.users[i].handle);
                     this.loginFail = false;
                 }
             }
