@@ -9,8 +9,8 @@
         <div class="media-content">
           <div class="content">
             <p>
-              <strong>{{ user }}</strong>
-              <small> {{ userHandle }}</small>
+              <strong>{{ post.user }}</strong>
+              <small> {{ post.userHandle }}</small>
               <br>
             </p>
             <p class="title is-3 has-text-weight-bold">{{post.sport}}: {{ post.title }}</p>
@@ -45,18 +45,24 @@
 </template>
 
 <script>
+import Vue from "vue"
 import Session from "../models/Session"
+import { GetMyPosts } from "../models/Posts";
 
-export default {
+export default Vue.extend({
     data: () => ({
       Session,
-      user: Session.currentUser,
-      userHandle: Session.currentUserHandle
+      posts: [],
     }),
     props: {
       post: Object
-    } 
-}
+    } ,
+    components: {
+    },
+    mounted() {
+      this.posts = GetMyPosts();
+    }
+})
 </script>
 
 <style>

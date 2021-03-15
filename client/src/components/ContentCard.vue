@@ -14,7 +14,7 @@
                 </div>
                 <div class="media-content">
                     <p class="title is-4 has-text-dark">{{ post.title }}</p>
-                    <p class="subtitle is-6 has-text-dark">{{ user }}</p>
+                    <p class="subtitle is-6 has-text-dark">{{ post.userHandle }}</p>
                 </div>
             </div>
         
@@ -34,7 +34,7 @@ export default({
     data() {
         return {
             Session,
-            user: Session.currentUser
+            
         }
     },
     props: {

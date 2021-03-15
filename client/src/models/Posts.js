@@ -6,6 +6,8 @@ import Session from "./Session";
 
 const posts = [
     {
+        user: "Isabella P",
+        userHandle: "@Isabel5",
         sport: "Run-Walk",
         title:"Morning walk to get some sunshine!",
         distance:"1 mile",
@@ -16,6 +18,8 @@ const posts = [
         img:"https://cdn.cdnparenting.com/articles/2018/11/04122759/562075621-H.jpg"
     },
     {
+        user: "Tom B",
+        userHandle: "@TBart12",
         sport: "Run/Walk",
         title:"Afternoon Hike To Awosting Falls!",
         distance:"3 Miles",
@@ -26,6 +30,8 @@ const posts = [
         img:"https://i.ytimg.com/vi/xDn_vUuJVyo/maxresdefault.jpg"
     },
     {
+        user: "Luke G",
+        userHandle: "@LG2200",
         sport: "Swim",
         title:"Morning Practice, Yikes..",
         distance:"8300 yards",
@@ -36,6 +42,8 @@ const posts = [
         img:"https://i1.wp.com/www.swimmersdaily.com/wp-content/uploads/2019/09/a-swim-practice-surprise-cody-mi.jpg?fit=1280%2C720&ssl=1"
     },
     {
+        user: "Jared F",
+        userHandle: "@JaredFinn",
         sport: "Ski-Snowboard",
         title:"Big Shred Day Today!",
         distance:"12 runs",
