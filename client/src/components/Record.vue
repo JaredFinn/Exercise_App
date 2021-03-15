@@ -3,8 +3,8 @@
         <form :newpost="newPost" @submit.prevent="addPost">
             <article class="box">
                 <div class="progress-box">
-                    <p class="progress-percent">You are <strong class="is-size-4">60%</strong> done with your daily goal!</p>
-                    <progress class="progress is-success" value="60" max="100">60%</progress>
+                    <p class="progress-percent">You are <strong class="is-size-4">{{ (goal / 5)*100 }}%</strong> done with your weekly goal of 5 exercises!</p>
+                    <progress class="progress is-success" value="0" max="100">{{ (goal / 5)*100 }}%</progress>
                 </div>
                     
                 <article class="panel is-info">
@@ -14,7 +14,7 @@
                     <li class="panel-tabs" >
                         <a v-for="tab in tabs" :key="tab" @click="selectTab(tab.title)" class="exercises" :class="{ 'is-active': selectedTab === tab.title }">{{ tab.title }}</a>
                     </li>
-                    <component v-bind:is="selectedTab" :sport="selectedTab"></component>                   
+                    <component @update-goal="updateGoal" v-bind:is="selectedTab" :sport="selectedTab"></component>                   
                 </article>
             </article>
         </form>
@@ -39,7 +39,8 @@ export default {
             {title: "Ski-Snowboard"}
         ],
         selectedTab: "Run-Walk",
-        posts: []    
+        posts: [],
+        goal: 0,
     }),
     components: {
         RunWalk,
@@ -49,9 +50,12 @@ export default {
         Gym,
     },
     methods: {
-        selectTab(tab){
+      selectTab(tab){
             this.selectedTab = tab;
       },
+      updateGoal(){
+          this.goal += 1;
+      }
     }
 }
 </script>

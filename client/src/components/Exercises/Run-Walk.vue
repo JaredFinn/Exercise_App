@@ -83,7 +83,7 @@
             
             <div class="field is-grouped">
                 <div class="control">
-                <button class="button is-info">Post</button>
+                <button @click="addToGoal" class="button is-info">Post</button>
                 </div>
                 <div class="control">
                 <button class="button is-info is-light">Cancel</button>
@@ -119,6 +119,9 @@ export default Vue.extend({
             this.posts.unshift(this.newPost);
             this.newPost = {}
         },
+        addToGoal(){
+            this.$emit('update-goal')
+        }
     },
     mounted() {
         this.posts = GetMyPosts();
