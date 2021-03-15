@@ -2,6 +2,8 @@
 
 */
 
+import Session from "./Session";
+
 const posts = [
     {
         sport: "Run-Walk",
@@ -36,11 +38,11 @@ const posts = [
 ];
 
 export function GetMyPosts(){
-    return posts;
+    return GetPostsForUser(Session.currentUser);
 }
 
-export function GetPostsForUser(){
-    return posts;
+export function GetPostsForUser(id){
+    return posts.filter( x => x.currentUser == id);
 }
 
 export function GetMyFeed(){
