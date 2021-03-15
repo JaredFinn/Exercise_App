@@ -65,7 +65,7 @@ export default {
         checkLogin(username, password) {
             var i;
             for(i = 0; i < this.users.length; i++){
-                if(username === this.users[i].username && password === this.users[i].password){
+                if(username === this.users[i].handle && password === this.users[i].password){
                     Login(this.users[i].user, this.users[i].handle);
                     this.loginFail = false;
                 }
