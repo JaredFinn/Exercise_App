@@ -18,7 +18,7 @@ const posts = [
         img:"https://cdn.cdnparenting.com/articles/2018/11/04122759/562075621-H.jpg"
     },
     {
-        user: "LeoL",
+        user: "LeoLit",
         userHandle: "@LeoLit",
         sport: "Run/Walk",
         title:"Afternoon Hike To Awosting Falls!",
@@ -30,7 +30,7 @@ const posts = [
         img:"https://i.ytimg.com/vi/xDn_vUuJVyo/maxresdefault.jpg"
     },
     {
-        user: "LukeG",
+        user: "LukeGamboli",
         userHandle: "@LG2200",
         sport: "Swim",
         title:"Morning Practice, Yikes..",
@@ -42,7 +42,7 @@ const posts = [
         img:"https://i1.wp.com/www.swimmersdaily.com/wp-content/uploads/2019/09/a-swim-practice-surprise-cody-mi.jpg?fit=1280%2C720&ssl=1"
     },
     {
-        user: "JaredF",
+        user: "JaredFinn",
         userHandle: "@JaredFinn",
         sport: "Ski-Snowboard",
         title:"Big Shred Day Today!",

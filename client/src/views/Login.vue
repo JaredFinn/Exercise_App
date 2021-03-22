@@ -56,13 +56,14 @@ export default {
     data: () => ({
         loginFail: false,
         users: [
-        { user: "JaredF" , handle: "@JaredFinn", password: "Jared100" },
-        { user: "LukeG" , handle: "@LukeGamboli", password: "Luke200" },
-        { user: "LeoL" , handle: "@LeoLit", password: "Leo300" },
+        { user: "JaredFinn" , handle: "@JaredFinn", password: "Jared100" },
+        { user: "LukeGamboli" , handle: "@LukeGamboli", password: "Luke200" },
+        { user: "LeoLit" , handle: "@LeoLit", password: "Leo300" },
     ],
     }),
     methods: {
         checkLogin(username, password) {
+            username = '@' + username;
             var i;
             for(i = 0; i < this.users.length; i++){
                 if(username === this.users[i].handle && password === this.users[i].password){
