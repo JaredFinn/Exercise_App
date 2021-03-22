@@ -1,27 +1,48 @@
 <template>
-  <div>
+<div>
+  <div v-if="!loginMessage">
       <div class="content-item" v-for="(post, i) in posts" :key="i">
-          <Post v-if="post[i].handle = Session.currentUserHandle" :post="post" @delete="deletePost(i)"/>
+          <Post :post="post" @delete="deletePost(i)"/>
       </div> 
-
   </div>  
+  <div v-else>
+      <article class="message" id="login-message">
+        <div class="message-header">
+          <p>Daily Activity cannot be reached</p>
+        </div>
+        <div class="message-body has-text-centered is-size-6">
+          You must be logged in in order to see your daily Activity.
+        </div>
+        <div class="has-text-centered">
+          <router-link to="/login" class="button is-info has-text-centered">
+                  Log in Here!
+          </router-link>
+        </div>
+      </article>
+  </div>  
+</div> 
 </template>
 
 <script>
 import Post from "./Post"
 import Vue from "vue"
 import { GetMyPosts } from "../models/Posts";
+import Session from "../models/Session";
 
 
 export default Vue.extend({
     data: () => ({
       posts: [],
+      loginMessage: false,
     }),
     components: {
-      Post
+      Post,
     },
     mounted() {
-      this.posts = GetMyPosts();
+      if(Session.currentUser)
+         this.posts = GetMyPosts();
+      else
+         this.loginMessage = true;
     }
 })
 
@@ -41,4 +62,10 @@ export default Vue.extend({
 #profile-image {
   border-radius: 6px;
 }
+#login-message{
+  width: 500px;
+  margin: auto;
+  margin-top: 100px;
+}
+
 </style>
