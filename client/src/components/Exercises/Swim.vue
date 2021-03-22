@@ -83,12 +83,14 @@
             
             <div class="field is-grouped">
                 <div class="control">
-                <button class="button is-info">Post</button>
+                <button @click="addToGoal" class="button is-info">Post</button>
                 </div>
                 <div class="control">
                 <button class="button is-info is-light">Cancel</button>
                 </div>
             </div>
+
+            <record-error v-if="recordMessage"/>
 
             <div class="content-item">
                 <p class="title">Preview Your New Post:</p>
@@ -101,24 +103,43 @@
 
 <script>
 import Post from "../Post"
+import RecordError from '../recordError.vue';
+import Session from "../../models/Session";
+import { GetMyFeed } from "../../models/Posts";
 
 export default {
     data: () => ({
         newPost: {
             
         },
+        recordMessage: false
     }),
     props:{
         sport: String
     },
     methods: {
         addPost(){
-            this.posts.unshift(this.newPost);
-            this.newPost = {}
+            if(Session.currentUser){
+                this.posts.unshift(this.newPost);
+                this.newPost = {}
+            }
+            else
+                this.recordMessage = true;
         },
+        addToGoal(){
+            if(Session.currentUser){
+                this.$emit('update-goal')
+                this.newPost.user = Session.currentUser;
+                this.newPost.userHandle = Session.currentUserHandle;
+            }
+        }
+    },
+    mounted() {
+        this.posts = GetMyFeed();
     },
     components: {
-        Post
+        Post,
+        RecordError
     }
     
 }

@@ -10,8 +10,8 @@ const Session = {
 }
 export default Session;
 
-export function Login(username, handle){
-    Session.currentUser = username;
+export function Login(user, handle){
+    Session.currentUser = user;
     Session.currentUserHandle = handle;
 }
 

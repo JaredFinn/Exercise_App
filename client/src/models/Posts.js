@@ -6,7 +6,7 @@ import Session from "./Session";
 
 const posts = [
     {
-        user: "Isabella P",
+        user: "IsabellaP",
         userHandle: "@Isabel5",
         sport: "Run-Walk",
         title:"Morning walk to get some sunshine!",
@@ -18,8 +18,8 @@ const posts = [
         img:"https://cdn.cdnparenting.com/articles/2018/11/04122759/562075621-H.jpg"
     },
     {
-        user: "Tom B",
-        userHandle: "@TBart12",
+        user: "LeoL",
+        userHandle: "@LeoLit",
         sport: "Run/Walk",
         title:"Afternoon Hike To Awosting Falls!",
         distance:"3 Miles",
@@ -30,7 +30,7 @@ const posts = [
         img:"https://i.ytimg.com/vi/xDn_vUuJVyo/maxresdefault.jpg"
     },
     {
-        user: "Luke G",
+        user: "LukeG",
         userHandle: "@LG2200",
         sport: "Swim",
         title:"Morning Practice, Yikes..",
@@ -42,7 +42,7 @@ const posts = [
         img:"https://i1.wp.com/www.swimmersdaily.com/wp-content/uploads/2019/09/a-swim-practice-surprise-cody-mi.jpg?fit=1280%2C720&ssl=1"
     },
     {
-        user: "Jared F",
+        user: "JaredF",
         userHandle: "@JaredFinn",
         sport: "Ski-Snowboard",
         title:"Big Shred Day Today!",
@@ -57,11 +57,11 @@ const posts = [
 ];
 
 export function GetMyPosts(){
-    return GetPostsForUser(Session.currentUser);
+    return GetPostsForUser(Session.currentUserHandle);
 }
 
 export function GetPostsForUser(id){
-    return posts.filter( x => x.currentUser == id);
+    return posts.filter( x => x.userHandle == id);
 }
 
 export function GetMyFeed(){

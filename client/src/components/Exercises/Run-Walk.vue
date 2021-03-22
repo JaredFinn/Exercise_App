@@ -90,11 +90,15 @@
                 </div>
             </div>
 
+            <ErrorMessage v-if="recordMessage"/>
+                
+
             <div class="content-item">
                 <p class="title">Preview Your New Post:</p>
                 <Post :post="newPost"/>
             </div> 
 
+            
         </article>
     </form>
 </template>
@@ -102,35 +106,44 @@
 <script>
 import Post from "../Post"
 import Vue from "vue"
-import { GetMyPosts } from "../../models/Posts";
+import { GetMyFeed } from "../../models/Posts";
 import Session from "../../models/Session"
+import ErrorMessage from "../recordError"
 
 export default Vue.extend({
     data: () => ({
         newPost: {
 
         },
-        posts: []
+        posts: [],
+        recordMessage: false
     }),
     props:{
         sport: String
     },
     methods: {
         addPost(){
-            this.posts.unshift(this.newPost);
-            this.newPost = {}
+            if(Session.currentUser){
+                this.posts.unshift(this.newPost);
+                this.newPost = {}
+            }
+            else
+                this.recordMessage = true;
         },
         addToGoal(){
-            this.$emit('update-goal')
-            this.newPost.user = Session.currentUser;
-            this.newPost.userHandle = Session.currentUserHandle;
+            if(Session.currentUser){
+                this.$emit('update-goal')
+                this.newPost.user = Session.currentUser;
+                this.newPost.userHandle = Session.currentUserHandle;
+            }
         }
     },
     mounted() {
-        this.posts = GetMyPosts();
+        this.posts = GetMyFeed();
     },
     components: {
-        Post
+        Post,
+        ErrorMessage
     }
     
 })

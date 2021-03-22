@@ -49,7 +49,7 @@ import Feed from "../components/Feed"
 import DailyActivity from "../components/Activity"
 import Record from "../components/Record"
 import Vue from "vue"
-import { GetMyPosts } from "../models/Posts";
+import { GetMyFeed } from "../models/Posts";
 
 export default Vue.extend({
   data: () => ({ 
@@ -75,7 +75,7 @@ export default Vue.extend({
     Record,
   },
   mounted() {
-        this.posts = GetMyPosts();
+        this.posts = GetMyFeed();
     }   
 
 })

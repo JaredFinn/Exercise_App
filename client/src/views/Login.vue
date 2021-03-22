@@ -56,9 +56,9 @@ export default {
     data: () => ({
         loginFail: false,
         users: [
-        { user: "Jared F" , handle: "@JaredFinn", password: "Jared100" },
-        { user: "Luke G" , handle: "@LukeGamboli", password: "Luke200" },
-        { user: "Leo L" , handle: "@LeoLit", password: "Leo300" },
+        { user: "JaredF" , handle: "@JaredFinn", password: "Jared100" },
+        { user: "LukeG" , handle: "@LukeGamboli", password: "Luke200" },
+        { user: "LeoL" , handle: "@LeoLit", password: "Leo300" },
     ],
     }),
     methods: {
