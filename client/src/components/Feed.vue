@@ -11,7 +11,7 @@
           <p>Feed cannot be reached</p>
         </div>
         <div class="message-body has-text-centered is-size-6">
-          You must be logged in in order to see feed.
+          You must be logged in to see your feed.
         </div>
         <div class="has-text-centered">
           <router-link to="/login" class="button is-info has-text-centered">

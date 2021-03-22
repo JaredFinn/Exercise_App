@@ -11,7 +11,7 @@
           <p>Daily Activity cannot be reached</p>
         </div>
         <div class="message-body has-text-centered is-size-6">
-          You must be logged in in order to see your daily Activity.
+          You must be logged in to see your daily Activity.
         </div>
         <div class="has-text-centered">
           <router-link to="/login" class="button is-info has-text-centered">
