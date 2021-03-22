@@ -7,10 +7,10 @@
         </p>
     </div>
 
-        <div class="columns" >
-            <div class="column is-one-third" v-for="(post, i) in posts" :key="i" >
+        <div class="columns">
+            <div class="column is-one-third" v-for="(post, i) in posts" :key="i"  >
                 <!--displays only 3 most recent posts-->
-                <content-card v-if="i < 3" :post="post"/>
+                <content-card :post="post"/>
             </div>
         </div>
     </section>
@@ -28,8 +28,7 @@ export default {
   components: { ContentCard },
   mounted() {
         this.posts = GetMyFeed();
-  }  
-
+  },  
 }
 </script>
 
