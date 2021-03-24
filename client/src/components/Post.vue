@@ -13,7 +13,7 @@
               <small> {{ post.userHandle }}</small>
               <br>
             </p>
-            <p class="title is-3 has-text-weight-bold">{{post.sport}}: {{ post.title }}</p>
+            <p class="title is-3 has-text-weight-bold">{{ post.sport }}: {{ post.title }}</p>
             <p class="subtitle is-5">Distance: {{ post.distance }} / Time: {{ post.time }} / Difficulty: {{ post.difficulty }} / Fellow Fitters: {{ post.fellowFitter }}</p>
             <p class="content is-medium">{{post.status}}</p>
             

@@ -1,5 +1,5 @@
 <template>
-    <div class="record" >
+    <div class="record">
         <form :newpost="newPost" @submit.prevent="addPost">
             <article class="box">
                 <div class="progress-box">

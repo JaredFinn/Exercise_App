@@ -9,11 +9,9 @@
                 Log in
             </router-link>
         </div>
-        <div v-else>
-            Welcome {{ Session.currentUser }}
-            (<a @click="logout">
-                logout
-            </a>)
+        <div class="buttons" v-else>
+            <p>Welcome <b>{{ Session.currentUserHandle }}</b></p>
+            <button @click="logout()" class="button is-info">Logout</button>
         </div>
 
     </div>
@@ -40,5 +38,7 @@ export default {
 </script>
 
 <style>
-
+#logout-button{
+    display: inline-block;
+}
 </style>

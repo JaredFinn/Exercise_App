@@ -120,6 +120,7 @@ export default {
     methods: {
         addPost(){
             if(Session.currentUser){
+                this.newPost.sport = this.sport;
                 this.posts.unshift(this.newPost);
                 this.newPost = {}
             }

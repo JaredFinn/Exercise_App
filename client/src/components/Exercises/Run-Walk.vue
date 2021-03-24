@@ -1,7 +1,7 @@
 <template>
     <form @submit.prevent="addPost">
         <article class="box">
-            <p class="title is-italic" newPost.sport=sport>{{ sport }}</p>
+            <p class="title is-italic">{{ sport }}</p>
             <div class="field">
                 <label class="label">Title</label>
                 <div class="control">
@@ -124,6 +124,7 @@ export default Vue.extend({
     methods: {
         addPost(){
             if(Session.currentUser){
+                this.newPost.sport = this.sport;
                 this.posts.unshift(this.newPost);
                 this.newPost = {}
             }

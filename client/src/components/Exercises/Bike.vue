@@ -110,7 +110,7 @@ import { GetMyFeed } from "../../models/Posts";
 export default {
     data: () => ({
         newPost: {
-            
+
         },
         recordMessage: false
     }),
@@ -120,6 +120,7 @@ export default {
     methods: {
         addPost(){
             if(Session.currentUser){
+                this.newPost.sport = this.sport;
                 this.posts.unshift(this.newPost);
                 this.newPost = {}
             }
