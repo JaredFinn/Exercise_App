@@ -1,5 +1,8 @@
 <template>
   <div class="home">
+    <div class="content is-pulled-left">
+      <FriendPanel/>
+    </div>
     <section class="hero is-info is-fullwidth">
         <div class="hero-body">
           <div class="container">
@@ -50,6 +53,7 @@ import DailyActivity from "../components/Activity"
 import Record from "../components/Record"
 import Vue from "vue"
 import { GetMyFeed } from "../models/Posts";
+import FriendPanel from "../components//Friendpanel/FriendPanel";
 
 export default Vue.extend({
   data: () => ({ 
@@ -73,6 +77,7 @@ export default Vue.extend({
     Feed,
     DailyActivity,
     Record,
+    FriendPanel
   },
   mounted() {
         this.posts = GetMyFeed();
