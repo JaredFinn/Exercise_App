@@ -5,8 +5,7 @@ const users = require("./users")
 
 const list = [
     {
-        user: "IsabellaP",
-        userHandle: "@Isabel5",
+        userHandle: "@ispast",
         sport: "Run-Walk",
         title:"Morning walk to get some sunshine!",
         distance:"1 mile",
@@ -14,11 +13,12 @@ const list = [
         fellowFitter:"",
         difficulty:"Just Right",
         status:"Nice morning to get up and walk!",
-        img:"https://cdn.cdnparenting.com/articles/2018/11/04122759/562075621-H.jpg"
+        img:"https://cdn.cdnparenting.com/articles/2018/11/04122759/562075621-H.jpg",
+        isPublic: true,
     },
     {
         user: "LeoLit",
-        userHandle: "@LeoLit",
+        userHandle: "@leolit",
         sport: "Run/Walk",
         title:"Afternoon Hike To Awosting Falls!",
         distance:"3 Miles",
@@ -82,7 +82,7 @@ module.exports.Add = ( post ) => {
 module.exports.Update = (post_id, post ) => {
     const oldObj = list[post_id];
     const newObj = { ...oldObj, ...post };
-    List[post_id] = newObj;
+    list[post_id] = newObj;
     return newObj;
 }
 module.exports.Delete = (post_id) => {
