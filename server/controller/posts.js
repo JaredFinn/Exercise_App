@@ -16,6 +16,10 @@ const app = express.Router();
                 res.send(model.GetWall(req.user.handle))
             }
         })
+        .get('/feed', (req, res) => {
+
+            res.send(model.GetFeed(req.user.handle) );
+        } )
         .get('/:post_id', (req, res) => {
             if(+req.params.post_id){
                 res.send(model.Get(req.params.post_id) )

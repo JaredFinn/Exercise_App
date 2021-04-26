@@ -7,9 +7,9 @@ const cors = require('cors');
 const dotenv = require("dotenv");
 dotenv.config();
 
-const { LoginRequired } = require('./controllers/security');
-const usersCtrl = require('./controllers/users');
-const postsCtrl = require('./controllers/posts');
+const { LoginRequired } = require('./controller/security');
+const usersCtrl = require('./controller/users');
+const postsCtrl = require('./controller/posts');
 const usersModel = require('./models/users');
 
 const app = express();
@@ -24,7 +24,7 @@ app
 
       const token = req.headers.authorization?.split(' ')[1];
       req.user = token && await usersModel.FromJWT(token);
-      req.user = { isAdmin: true}
+      //req.user = { isAdmin: true}
       next();
     })
 

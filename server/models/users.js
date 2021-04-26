@@ -13,7 +13,7 @@ const list = [
         lastName: 'Finn',
         handle: '@jaredfinn',
         pic: 'https://bulma.io/images/placeholders/96x96.png',
-        password: 'Me',
+        password: '$2b$08$BY4N6rJfNlF9B00iwvc/fO1.ziIptuFZFfTQ1Lj7m1CxgJ4dQYdzO',
         isAdmin: true,
         following: [ { handle: '@vp', isApproved: true }, { handle: '@johnsmith', isApproved: true }, ],
     },

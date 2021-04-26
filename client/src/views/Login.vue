@@ -21,7 +21,7 @@
                 <div class="field">
                     <label class="label">Username</label>
                     <p class="control has-icons-left has-icons-right">
-                        <input class="input" type="username" placeholder="@Matt123" v-model="username">
+                        <input class="input" type="username" placeholder="@Matt123" v-model="handle">
                         <span class="icon is-small is-left">
                             <i class="fas fa-user"></i>
                         </span>
@@ -37,7 +37,7 @@
                     </p>
                 </div>
             
-                <button class="button is-info" @click.prevent="checkLogin(username, password)" >Sign in</button>
+                <button class="button is-info" @click.prevent="login(username, password)" >Log in</button>
                 <p class="is-size-5">
                     Dont have an account? Sign Up here.
                 </p>
@@ -50,30 +50,18 @@
 </template>
 
 <script>
-import Session, { Login } from "../models/Session";
+import { Login } from "../models/Session";
 
 export default {
     data: () => ({
         loginFail: false,
-        users: [
-        { user: "JaredFinn" , handle: "@JaredFinn", password: "Jared100" },
-        { user: "LukeGamboli" , handle: "@LukeGamboli", password: "Luke200" },
-        { user: "LeoLit" , handle: "@LeoLit", password: "Leo300" },
-    ],
+        handle: null,
+        password: null
     }),
     methods: {
-        checkLogin(username, password) {
-            username = '@' + username;
-            var i;
-            for(i = 0; i < this.users.length; i++){
-                if(username === this.users[i].handle && password === this.users[i].password){
-                    Login(this.users[i].user, this.users[i].handle);
-                    this.loginFail = false;
-                }
-            }
-            if(!Session.currentUser)
-                this.loginFail = true;
-        },
+        login(){
+            Login(this.handle, this.password);
+        }
     }
 }
 </script>
