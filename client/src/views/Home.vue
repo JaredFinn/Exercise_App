@@ -60,7 +60,7 @@ import Feed from "../components/Feed"
 import DailyActivity from "../components/Activity"
 import Record from "../components/Record"
 import Vue from "vue"
-import { GetMyFeed } from "../models/Posts";
+//import { GetMyFeed } from "../models/Posts";
 import FriendPanel from "../components//Friendpanel/FriendPanel";
 
 export default Vue.extend({
@@ -88,7 +88,7 @@ export default Vue.extend({
     FriendPanel
   },
   mounted() {
-        this.posts = GetMyFeed();
+        //this.posts = GetMyFeed();
     }   
 
 })

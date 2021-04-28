@@ -37,7 +37,7 @@
                     </p>
                 </div>
             
-                <button class="button is-info" @click.prevent="login(username, password)" >Log in</button>
+                <button class="button is-info" @click.prevent="login(handle, password)" >Log in</button>
                 <p class="is-size-5">
                     Dont have an account? Sign Up here.
                 </p>

@@ -1,7 +1,7 @@
 <template>
     <div>
 
-        <div class="buttons" v-if="!Session.currentUser">
+        <div v-if="!Session.user">
             <router-link to="/signup" class="button is-info">
                 Sign Up
             </router-link>
@@ -9,36 +9,34 @@
                 Log in
             </router-link>
         </div>
-        <div class="buttons" v-else>
-            <p>Welcome <b>{{ Session.currentUserHandle }}</b></p>
-            <button @click="logout()" class="button is-info">Logout</button>
+        <div v-else>
+            <account-info/>
         </div>
 
     </div>
 </template>
 
 <script>
-import Session, { Login, Logout } from "../models/Session";
+import Session, {  Logout } from "../models/Session";
+import AccountInfo from './Account-info.vue';
 
 export default {
-    data() {
+    data(){
         return {
             Session
         }
     },
     methods: {
-        login() {
-            Login();
-        },
         logout() {
             Logout();
         }
-    }
+    },
+    components: {
+        AccountInfo
+    },
 }
 </script>
 
 <style>
-#logout-button{
-    display: inline-block;
-}
+
 </style>

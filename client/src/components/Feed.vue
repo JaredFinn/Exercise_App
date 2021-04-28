@@ -38,6 +38,7 @@ export default Vue.extend({
       user: Session.user
     }),
     async mounted() {
+      if(this.user)
         this.posts = await GetMyFeed(); 
     },
     components: {
