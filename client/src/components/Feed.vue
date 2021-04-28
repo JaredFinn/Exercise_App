@@ -1,11 +1,10 @@
 <template>
   <div>
-  <div >
+  <div v-if="user">
       <div class="content-item" v-for="(post, i) in posts" :key="i">
           <Post :post="post" @delete="deletePost(i)"/>
       </div> 
   </div>  
-  <!--
   <div v-else>
       <article class="message" id="login-message">
         <div class="message-header">
@@ -21,7 +20,7 @@
         </div>
       </article>
   </div>  
-  -->
+
 </div>  
 </template>
 
