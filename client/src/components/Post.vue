@@ -25,14 +25,14 @@
                 </div>
               </div>
 
-              <a @click="liked()">
-                <span v-if="!like">
-                  <i class="far fa-heart fa-lg" ></i>
-                </span>
-                <span v-else>
-                  <i class="fas fa-heart fa-lg" ></i>
-                </span>
-              </a>
+              <button @click="liked()">
+                  <i v-if="!like" class="far fa-heart fa-lg" ></i>
+                  <i v-else class="fas fa-heart fa-lg" ></i>
+              </button>
+                  
+                
+                
+              
 
               <br>
               <br>
@@ -78,7 +78,7 @@ export default Vue.extend({
     },
     methods: {
       liked(){
-        
+        this.like = !this.like
       }
     }
 })
