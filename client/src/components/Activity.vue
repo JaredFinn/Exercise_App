@@ -8,10 +8,10 @@
   <div v-else>
       <article class="message" id="login-message">
         <div class="message-header">
-          <p>Daily Activity cannot be reached</p>
+          <p>Your Activity cannot be reached</p>
         </div>
         <div class="message-body has-text-centered is-size-6">
-          You must be logged in to see your daily Activity.
+          You must be logged in to see your Activity.
         </div>
         <div class="has-text-centered">
           <router-link to="/login" class="button is-info has-text-centered">
@@ -43,7 +43,6 @@ export default Vue.extend({
         this.posts = await GetMyPosts(); 
     },
 })
-
 
 </script>
 

@@ -57,7 +57,7 @@
 <script>
 import ContentCard from '../components/ContentCard.vue'
 import Feed from "../components/Feed"
-import DailyActivity from "../components/Activity"
+import YourActivity from "../components/Activity"
 import Record from "../components/Record"
 import Vue from "vue"
 //import { GetMyFeed } from "../models/Posts";
@@ -67,7 +67,7 @@ export default Vue.extend({
   data: () => ({ 
       tabs: [
             {title: "Feed"},
-            {title: "DailyActivity"},
+            {title: "YourActivity"},
             {title: "Record"}
         ],
       selectedTab: "Feed",
@@ -83,7 +83,7 @@ export default Vue.extend({
   components: {
     ContentCard,
     Feed,
-    DailyActivity,
+    YourActivity,
     Record,
     FriendPanel
   },

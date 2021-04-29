@@ -14,6 +14,7 @@ const list = [
         handle: '@jaredfinn',
         pic: 'https://bulma.io/images/placeholders/96x96.png',
         password: '$2b$08$BY4N6rJfNlF9B00iwvc/fO1.ziIptuFZFfTQ1Lj7m1CxgJ4dQYdzO',
+        email: 'jaredhfinn@gmail.com',
         isAdmin: true,
         following: [ { handle: '@ispast', isApproved: true }, { handle: '@johnsmith', isApproved: true }, ],
     },
@@ -22,9 +23,9 @@ const list = [
         lastName: 'Pastore',
         handle: '@ispast',
         pic: 'https://bulma.io/images/placeholders/96x96.png',
-        password: 'Her',
+        password: '$2b$08$QF/WdsBfo/5Mt2dG0XXjzOSB/tgBC9jIoBrAc/dppDcRiRF12BPhq',
         isAdmin: true,
-        following: [ { handle: '@johnsmith', isApproved: true }, ],
+        following: [ { handle: '@jaredfinn', isApproved: true }, ],
     },
     {
         firstName: 'Leo',
@@ -41,8 +42,8 @@ module.exports.GetAll = () => list;
 module.exports.Get = (user_id) => list[user_id];
 module.exports.GetByHandle = (handle) => ({ ...list.find( (x, i) => x.handle == handle ), password: undefined }) 
 module.exports.Add = ( user ) => {
-    if(!user.firstName){
-        throw {code: 422, msg: "First Name is Required"}
+    if(!user.handle){
+        throw {code: 422, msg: "First Name is Required "}
     }
     list.push(user);
     return { ...user, password: undefined }
@@ -53,10 +54,11 @@ module.exports.Register =  async ( user ) => {
 
     user.password = hash;
 
-    if(!user.firstName){
-        throw {code: 422, msg: "First Name is Required"}
+    if(!user.handle || !user.password){
+        throw {code: 422, msg: "Handle and password are required to sign up"}
     }
     list.push(user);
+    console.log("Signed Up: " + { user })
     return { ...user, password: undefined }
 }
 module.exports.Update = (user_id, user ) => {
