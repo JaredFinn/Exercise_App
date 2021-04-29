@@ -1,8 +1,11 @@
 <template>
     <div>
         <div id="account">
-            <p >Welcome <b>{{ user.firstName }}</b></p>
-            <p id="handle">{{ user.handle }}</p>
+            <div id="profile-picBox">
+                <img id="profile-pic" :src="Session.user.pic" />
+            </div>
+            <p >Welcome <b>{{ Session.user.firstName }}</b></p>
+            <p id="handle">{{ Session.user.handle }}</p>
         </div>
         <div id="logout-button">
             <button  @click="logout()" class="button is-info">Logout</button>
@@ -15,7 +18,7 @@ import Session, { Logout } from "../models/Session";
 
 export default {
     data: () => ({
-        user: Session.user
+        Session
     }),
     methods: {
         logout() {
@@ -36,5 +39,11 @@ export default {
 #handle {
     margin-left: 30px;
 }
+#profile-picBox{
+    float: left;
+    padding-top: 10px;
+    
+}
+
 
 </style>

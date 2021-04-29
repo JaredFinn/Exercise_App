@@ -5,7 +5,7 @@
     </p>
 
     <li class="panel-tabs" >
-        <a v-for="tab in tabs" :key="tab" @click="selectTab(tab.title)" :class="{ 'is-active': selectedTab === tab.title }">{{ tab.title }}</a>
+        <a v-for="(tab, i) in tabs" :key="i" @click="selectTab(tab.title)" :class="{ 'is-active': selectedTab === tab.title }">{{ tab.title }}</a>
     </li>
     <component v-bind:is="selectedTab"></component>
 

@@ -37,8 +37,10 @@ export default Vue.extend({
       Session
     }),
     async mounted() {
-      if(Session.user)
-        this.posts = await GetMyFeed(); 
+      if(Session.user){
+        if(Session.user.following)
+          this.posts = await GetMyFeed();
+      }
     },
     components: {
       Post

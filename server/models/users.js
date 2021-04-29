@@ -3,6 +3,7 @@
 */
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const axios = require('axios').default;
 
 const SALT_ROUNDS = process.env.SALT_ROUNDS;
 const JWT_SECRET = process.env.JWT_SECRET;
