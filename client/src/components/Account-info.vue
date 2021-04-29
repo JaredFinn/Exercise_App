@@ -51,6 +51,9 @@ export default {
     float: left;
     padding-top: 10px;
 }
+#profile-pic{
+    height: auto;
+}
 
 
 </style>
