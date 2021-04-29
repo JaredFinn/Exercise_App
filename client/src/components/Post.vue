@@ -59,8 +59,9 @@ export default Vue.extend({
     } ,
     components: {
     },
-    mounted() {
-      this.posts = GetMyPosts();
+    async mounted() {
+      if(Session.user)
+        this.posts = await GetMyPosts();
     }
 })
 </script>

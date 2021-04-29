@@ -90,7 +90,7 @@
                 </div>
             </div>
 
-            <record-error v-if="recordMessage"/>
+            <record-error v-if="!Session.user"/>
 
             <div class="content-item">
                 <p class="title">Preview Your New Post:</p>
@@ -105,39 +105,32 @@
 import Post from "../Post"
 import RecordError from '../recordError.vue';
 import Session from "../../models/Session";
-import { GetMyFeed } from "../../models/Posts";
+import {  AddPost } from "../../models/Posts";
 
 export default {
     data: () => ({
         newPost: {
-            
+            user: Session.user.handle
         },
-        recordMessage: false
+        posts: [],
+        Session
     }),
     props:{
         sport: String
     },
     methods: {
-        addPost(){
-            if(Session.currentUser){
-                this.newPost.sport = this.sport;
-                this.posts.unshift(this.newPost);
-                this.newPost = {}
-            }
-            else
-                this.recordMessage = true;
+        async addPost(){
+            const post = await AddPost(this.newPost)
+            this.posts.unshift(post);
+            this.newPost = { user: Session.user.handle }
         },
         addToGoal(){
-            if(Session.currentUser){
+            if(Session.user){
                 this.$emit('update-goal')
-                this.newPost.user = Session.currentUser;
-                this.newPost.userHandle = Session.currentUserHandle;
             }
         }
     },
-    mounted() {
-        this.posts = GetMyFeed();
-    },
+ 
     components: {
         Post,
         RecordError

@@ -40,6 +40,9 @@ export default {
         ],
         selectedTab: "Run-Walk",
         posts: [],
+        newPost: {
+            
+        },
         goal: 0,
     }),
     components: {

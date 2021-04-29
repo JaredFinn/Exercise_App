@@ -90,7 +90,7 @@
                 </div>
             </div>
 
-            <ErrorMessage v-if="recordMessage"/>
+            <record-error v-if="!Session.user"/>
                 
 
             <div class="content-item">
@@ -106,45 +106,36 @@
 <script>
 import Post from "../Post"
 import Vue from "vue"
-import { GetMyFeed } from "../../models/Posts";
+import { AddPost } from "../../models/Posts";
 import Session from "../../models/Session"
-import ErrorMessage from "../recordError"
+import RecordError from "../recordError"
 
 export default Vue.extend({
     data: () => ({
         newPost: {
-
+            user: Session.user.handle
         },
         posts: [],
-        recordMessage: false
+        Session
     }),
     props:{
         sport: String
     },
     methods: {
-        addPost(){
-            if(Session.currentUser){
-                this.newPost.sport = this.sport;
-                this.posts.unshift(this.newPost);
-                this.newPost = {}
-            }
-            else
-                this.recordMessage = true;
+        async addPost(){
+            const post = await AddPost(this.newPost)
+            this.posts.unshift(post);
+            this.newPost = { user: Session.user.handle }
         },
         addToGoal(){
-            if(Session.currentUser){
+            if(Session.user){
                 this.$emit('update-goal')
-                this.newPost.user = Session.currentUser;
-                this.newPost.userHandle = Session.currentUserHandle;
             }
         }
     },
-    mounted() {
-        this.posts = GetMyFeed();
-    },
     components: {
         Post,
-        ErrorMessage
+        RecordError
     }
     
 })

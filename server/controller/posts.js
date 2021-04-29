@@ -27,7 +27,7 @@ const app = express.Router();
 
         .post('/', (req, res) => {
             
-            req.body.user_handle = req.user.handle;
+            req.body.userHandle = req.user.handle;
 
             res.send( model.Add(req.body));
         })
