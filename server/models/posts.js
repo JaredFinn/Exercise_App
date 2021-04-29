@@ -5,6 +5,7 @@ const users = require("./users")
 
 const list = [
     {
+        user: "IsabellaPastore",
         userHandle: "@ispast",
         sport: "Run-Walk",
         title:"Morning walk to get some sunshine!",
@@ -26,7 +27,8 @@ const list = [
         fellowFitter:"@Leo, @Luke",
         difficulty:"Recovery",
         status:"Beautiful afternoon hike in New Paltz. Took a loop to awosting falls!",
-        img:"https://i.ytimg.com/vi/xDn_vUuJVyo/maxresdefault.jpg"
+        img:"https://i.ytimg.com/vi/xDn_vUuJVyo/maxresdefault.jpg",
+        isPublic: true,
     },
     {
         user: "LukeGamboli",
@@ -42,7 +44,7 @@ const list = [
     },
     {
         user: "JaredFinn",
-        userHandle: "@JaredFinn",
+        userHandle: "@jaredfinn",
         sport: "Ski-Snowboard",
         title:"Big Shred Day Today!",
         distance:"12 runs",
@@ -50,7 +52,8 @@ const list = [
         fellowFitter:"@Leo, @Akiva",
         difficulty:"Just Right",
         status:"Hit up hunter mountain today, no friends on a pow day!",
-        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Hunter_Mountain.jpg/240px-Hunter_Mountain.jpg"
+        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Hunter_Mountain.jpg/240px-Hunter_Mountain.jpg",
+        isPublic: true,
     },
     
 ];
@@ -63,13 +66,12 @@ const listWithOwner = () => list.map((x, i) => ({
 module.exports.GetAll = () => { 
     return listWithOwner();
 }
-
-module.exports.GetWall = (handle) => { 
-  return listWithOwner().filter(post => post.userHandle == handle);
-}
+module.exports.GetWall = (handle)=> 
+    listWithOwner().filter(post=> post.userHandle == handle);
 
 module.exports.GetFeed = (handle) => listWithOwner()
-  .filter(post => users.GetByHandle(handle).following.some(f => f.handle == post.userHandle && f.isApproved) );
+    .filter(post => users.GetByHandle(handle).following.some(f => f.handle == post.userHandle && f.isApproved) );
+    
 
 module.exports.Get = (post_id) => list[post_id];
 module.exports.Add = ( post ) => {

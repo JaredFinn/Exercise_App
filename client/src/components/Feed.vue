@@ -34,7 +34,6 @@ import Session from "../models/Session"
 export default Vue.extend({
     data: () => ({
       posts: [],
-      loginMessage: true,
       Session
     }),
     async mounted() {

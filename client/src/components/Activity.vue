@@ -1,6 +1,6 @@
 <template>
 <div>
-  <div v-if="!loginMessage">
+  <div v-if="Session.user">
       <div class="content-item" v-for="(post, i) in posts" :key="i">
           <Post :post="post" @delete="deletePost(i)"/>
       </div> 
@@ -33,17 +33,15 @@ import Session from "../models/Session";
 export default Vue.extend({
     data: () => ({
       posts: [],
-      loginMessage: false,
+      Session
     }),
     components: {
       Post,
     },
-    mounted() {
-      if(Session.currentUser)
-         this.posts = GetMyPosts();
-      else
-         this.loginMessage = true;
-    }
+    async mounted() {
+      if(Session.user)
+        this.posts = await GetMyPosts(); 
+    },
 })
 
 
