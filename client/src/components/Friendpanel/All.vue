@@ -8,12 +8,14 @@
             </span>
             </p>
         </div>
-        <a class="panel-block" v-for="friend in Session.user.following" :key="friend" v-on="retrieveFriend(friend.handle)">
-            <span class="panel-icon">
-            <i class="fas fa-user" aria-hidden="true"></i>
-            </span>
-            {{ friends.firstName }} {{ friend.handle }}
-        </a>
+        <div v-if="Session.user">
+            <a class="panel-block" v-for="friend in Session.user.following" :key="friend" v-on="retrieveFriend(friend.handle)" >
+                <span class="panel-icon">
+                <i class="fas fa-user" aria-hidden="true"></i>
+                </span>
+                {{ friend.handle }}
+            </a>
+        </div>
     </div>
 </template>
 

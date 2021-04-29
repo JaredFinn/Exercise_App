@@ -5,7 +5,9 @@
           <div class="tile is-parent is-vertical">
             <article class="tile is-child notification is-success">
               <p class="title">Our Start</p>
-              <p class="subtitle">Coming Soon...</p>
+              <p class="subtitle">Here we are in web Server Programming class learning
+                                  how to create a full stack we application! How Cool!
+              </p>
             </article>
           </div>
           <div class="tile is-parent">
@@ -21,7 +23,7 @@
         <div class="tile is-parent">
           <article class="tile is-child notification is-info">
             <p class="title">Our Mission</p>
-            <p class="subtitle">Coming Soon...</p>
+            <p class="subtitle">CBring together a community willing to encourage others to stay fit.</p>
             <div class="content">
               <!-- Content -->
             </div>
@@ -32,7 +34,7 @@
         <article class="tile is-child notification is-success">
           <div class="content">
             <p class="title">How We Function</p>
-            <p class="subtitle">Coming Soon...</p>
+            <p class="subtitle">We Code...and we code hard</p>
             <div class="content">
               <!-- Content -->
             </div>
