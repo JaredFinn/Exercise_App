@@ -1,11 +1,13 @@
 <template>
     <div>
-        <div id="account">
-            <div id="profile-picBox">
-                <img id="profile-pic" :src="Session.user.pic" />
+        <div class="box" id="info-box">
+            <div id="account">
+                <figure class="image is-48x48" id="profile-picBox">
+                    <img class="is-rounded" id="profile-pic" :src="Session.user.pic" />
+                </figure>
+                <p >Welcome <b>{{ Session.user.firstName }}</b></p>
+                <p id="handle">{{ Session.user.handle }}</p>
             </div>
-            <p >Welcome <b>{{ Session.user.firstName }}</b></p>
-            <p id="handle">{{ Session.user.handle }}</p>
         </div>
         <div id="logout-button">
             <button  @click="logout()" class="button is-info">Logout</button>
@@ -29,9 +31,14 @@ export default {
 </script>
 
 <style>
-#account {
+#info-box {
     float: left;
-    padding-top: 5px;
+    white-space: nowrap;
+    width: 100%;
+
+}
+#account{
+    display: inline-block;
 }
 #logout-button {
     float: right;
@@ -40,9 +47,9 @@ export default {
     margin-left: 30px;
 }
 #profile-picBox{
+    overflow: hidden;
     float: left;
     padding-top: 10px;
-    
 }
 
 
