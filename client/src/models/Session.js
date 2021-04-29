@@ -28,8 +28,12 @@ export async function Login(handle, password) {
     router.push(Session.nextRoute ?? '/')
 }
 
-export function Logout() {
-    Session.user = null
+export async function Logout(handle, password) {
+    const {user, token} = await api('users/logout', { handle, password } )
+    Session.user = user;
+    Session.user = token;
+
+    console.log(Session.user);
 }
 
 export function toastError(msg){

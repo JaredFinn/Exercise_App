@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import Session, {  Logout } from "../models/Session";
+import Session from "../models/Session";
 import AccountInfo from './Account-info.vue';
 
 export default {
@@ -27,9 +27,7 @@ export default {
         }
     },
     methods: {
-        logout() {
-            Logout();
-        }
+        
     },
     components: {
         AccountInfo

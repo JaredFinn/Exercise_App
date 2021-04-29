@@ -1,6 +1,6 @@
 <template>
   <div>
-  <div v-if="user">
+  <div v-if="Session.user">
       <div class="content-item" v-for="(post, i) in posts" :key="i">
           <Post :post="post" @delete="deletePost(i)"/>
       </div> 
@@ -35,10 +35,10 @@ export default Vue.extend({
     data: () => ({
       posts: [],
       loginMessage: true,
-      user: Session.user
+      Session
     }),
     async mounted() {
-      if(this.user)
+      if(Session.user)
         this.posts = await GetMyFeed(); 
     },
     components: {

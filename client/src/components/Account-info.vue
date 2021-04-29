@@ -1,22 +1,40 @@
 <template>
-        <div>
-            <p>Welcome <b>{{ user.firstName }}</b></p>
-            <button id="logout-button" @click="logout()" class="button is-info">Logout</button>
+    <div>
+        <div id="account">
+            <p >Welcome <b>{{ user.firstName }}</b></p>
+            <p id="handle">{{ user.handle }}</p>
         </div>
+        <div id="logout-button">
+            <button  @click="logout()" class="button is-info">Logout</button>
+        </div>
+    </div>
 </template>
 
 <script>
-import Session from "../models/Session";
+import Session, { Logout } from "../models/Session";
 
 export default {
     data: () => ({
         user: Session.user
     }),
+    methods: {
+        logout() {
+            Logout();
+        }
+    }
 }
 </script>
 
 <style>
-#logout-button{
-    display: inline-block;
+#account {
+    float: left;
+    padding-top: 5px;
 }
+#logout-button {
+    float: right;
+}
+#handle {
+    margin-left: 30px;
+}
+
 </style>

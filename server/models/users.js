@@ -97,6 +97,12 @@ module.exports.Login = async (handle, password) => {
     return { user: data, token};
 }
 
+module.exports.Logout = async (handle, password) => {
+    console.log("Logging out: " +{ handle, password})
+
+    return { user: null, token: null};
+}
+
 module.exports.FromJWT = async (token) => {
     try{
         const user = jwt.verify(token, JWT_SECRET);
