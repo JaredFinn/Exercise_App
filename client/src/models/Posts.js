@@ -21,3 +21,7 @@ export function GetMyFeed(){
 export function AddPost(post){
     return api("posts", post)
 }
+
+export function GetAllPosts(){
+    return api("posts/all")
+}

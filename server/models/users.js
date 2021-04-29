@@ -14,16 +14,18 @@ const list = [
         lastName: 'Finn',
         handle: '@jaredfinn',
         pic: 'https://bulma.io/images/placeholders/96x96.png',
+        //password: Me
         password: '$2b$08$BY4N6rJfNlF9B00iwvc/fO1.ziIptuFZFfTQ1Lj7m1CxgJ4dQYdzO',
         email: 'jaredhfinn@gmail.com',
         isAdmin: true,
-        following: [ { handle: '@ispast', isApproved: true }, { handle: '@johnsmith', isApproved: true }, ],
+        following: [ { handle: '@ispast', isApproved: true }, { handle: '@leolit', isApproved: true }, { handle: '@LG2200', isApproved: true }, ],
     },
     {
         firstName: 'Isabella',
         lastName: 'Pastore',
         handle: '@ispast',
         pic: 'https://bulma.io/images/placeholders/96x96.png',
+        //password: Her
         password: '$2b$08$QF/WdsBfo/5Mt2dG0XXjzOSB/tgBC9jIoBrAc/dppDcRiRF12BPhq',
         isAdmin: true,
         following: [ { handle: '@jaredfinn', isApproved: true }, ],
@@ -35,7 +37,7 @@ const list = [
         pic: 'https://bulma.io/images/placeholders/96x96.png',
         password: 'BeepBop',
         isAdmin: true,
-        following: [ { handle: '@vp', isApproved: true }, ],
+        following: [ { handle: '@jaredfinn', isApproved: true }, ],
     },
 ];
 

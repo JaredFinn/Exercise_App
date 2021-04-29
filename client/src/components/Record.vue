@@ -12,7 +12,7 @@
                         Record Your Workout
                     </p>
                     <li class="panel-tabs" >
-                        <a v-for="tab in tabs" :key="tab" @click="selectTab(tab.title)" class="exercises" :class="{ 'is-active': selectedTab === tab.title }">{{ tab.title }}</a>
+                        <a v-for="(tab, i) in tabs" :key="i" @click="selectTab(tab.title)" class="exercises" :class="{ 'is-active': selectedTab === tab.title }">{{ tab.title }}</a>
                     </li>
                     <div v-if="Session.user">
                         <component @update-goal="updateGoal" v-bind:is="selectedTab" :sport="selectedTab"></component>       

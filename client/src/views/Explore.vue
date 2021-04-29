@@ -9,35 +9,32 @@
             <p class="subtitle has-text-centered">
             Record and share your exercises!
             </p>
-            <div class="columns" >
-                <div class="column is-one-third" v-for="(post, i) in posts" :key="i" >
-                    <div v-if="i % 3 === 0">
-                        <content-card  :post="post"/>
-                    </div>
-                    
-                    <div v-else>
-                        <content-card :post="post"/>
-                    </div>
-                </div>
-            </div>
+            
           </div>
         </div>
     </section>
+    <div>
+        <div class="content-item" v-for="(post, i) in posts" :key="i">
+            <Post :post="post" @delete="deletePost(i)"/>
+        </div> 
+    </div>  
 </div>
 </template>
 
 <script>
-import ContentCard from '../components/ContentCard.vue'
-import { GetMyFeed } from "../models/Posts";
+import { GetAllPosts } from "../models/Posts";
+import Post from "../components/Post";
 
 export default {
   data: () => ({
       posts: [],
   }),
-  components: { ContentCard },
-  mounted() {
-        this.posts = GetMyFeed();
+  async mounted() {
+        this.posts = await GetAllPosts();
   },  
+  components: {
+      Post
+  }
 }
 </script>
 

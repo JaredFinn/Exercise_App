@@ -12,6 +12,9 @@ const app = express.Router();
         .get('/', (req, res) => {
             res.send(model.GetWall(req.user.handle))
         })
+        .get('/all', (req, res) => {
+            res.send(model.GetAll())
+        })
         .get('/feed', (req, res) => {
 
             res.send(model.GetFeed(req.user.handle) );
