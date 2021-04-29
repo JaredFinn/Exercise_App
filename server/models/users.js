@@ -100,6 +100,32 @@ module.exports.Login = async (handle, password) => {
     return { user: data, token};
 }
 
+module.exports.LoginFB = async (access_token) =>{
+    console.log({ access_token })
+
+    const userFB = await axios.get(`https://graph.facebook.com/v10.0/me?fields=first_name,last_name,email,picture&access_token=${access_token}`)
+    console.log(userFB.data);
+
+    // Get a verified email address from facebook
+    let user = list.find(x=> x.email == userFB.data.email);
+    if(!user) {
+        user = {
+            firstName: userFB.data.first_name,
+            lastName: userFB.data.last_name,
+            pic: userFB.data.picture.data.url,
+            email: userFB.data.email,
+            handle:  userFB.data.email
+        };
+        list.push(user);
+    }
+
+    const data = { ...user, password: undefined };
+
+    const token = jwt.sign(data, JWT_SECRET)
+
+    return { user: data, token };
+}
+
 module.exports.Logout = async (handle, password) => {
     console.log("Logging out: " +{ handle, password})
 

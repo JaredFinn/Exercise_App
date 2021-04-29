@@ -30,6 +30,11 @@ const app = express.Router();
             .then(user=> res.send(user))
             .catch(next);
         })
+        .post('/loginFB', (req, res, next)=> { 
+            model.LoginFB(req.body.access_token)
+            .then(user=> res.send( user  ))
+            .catch(next);
+        })
         .post('/logout', (req, res, next) => {
             model.Logout(req.body.handle, req.body.password)
             .then(user=> res.send(user))
