@@ -1,6 +1,5 @@
 <template>
     <div>
-
         <div v-if="!Session.user">
             <router-link to="/signup" class="button is-info">
                 Sign Up
@@ -36,5 +35,4 @@ export default {
 </script>
 
 <style>
-
 </style>
