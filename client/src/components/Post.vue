@@ -24,6 +24,18 @@
                   </figure>
                 </div>
               </div>
+
+              <a @click="liked()">
+                <span v-if="!like">
+                  <i class="far fa-heart fa-lg" ></i>
+                </span>
+                <span v-else>
+                  <i class="fas fa-heart fa-lg" ></i>
+                </span>
+              </a>
+
+              <br>
+              <br>
             <small> {{ post.time }} ago</small>
           </div>
 
@@ -53,6 +65,7 @@ export default Vue.extend({
     data: () => ({
       Session,
       posts: [],
+      like: false
     }),
     props: {
       post: Object
@@ -62,6 +75,11 @@ export default Vue.extend({
     async mounted() {
       if(Session.user)
         this.posts = await GetMyPosts();
+    },
+    methods: {
+      liked(){
+        
+      }
     }
 })
 </script>

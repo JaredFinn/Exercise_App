@@ -13,6 +13,10 @@ const app = express.Router();
             res.send(model.GetAll() );
             console.log(req.headers);
         } )
+        .get('/friend', LoginRequired, (req, res) => {
+            res.send(model.GetByHandle(req.body) );
+            console.log(req.headers);
+        } )
         .get('/:user_id', LoginRequired, (req, res) => res.send(model.Get(req.params.user_id) ))
         .post('/', LoginRequired, (req, res) => {
             res.send( model.Add(req.body));

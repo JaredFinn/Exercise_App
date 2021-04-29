@@ -41,6 +41,7 @@ const list = [
 module.exports.GetAll = () => list;
 module.exports.Get = (user_id) => list[user_id];
 module.exports.GetByHandle = (handle) => ({ ...list.find( (x, i) => x.handle == handle ), password: undefined }) 
+
 module.exports.Add = ( user ) => {
     if(!user.handle){
         throw {code: 422, msg: "First Name is Required "}
